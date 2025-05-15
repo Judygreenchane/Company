@@ -25,7 +25,7 @@ namespace Companies.API.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Company>>> GetCompany()
         {
-            var companies =await _context.Company/*.Include(c => c.Employees)*/.ToListAsync();
+            var companies =await _context.Company.Include(c => c.Employees).ToListAsync();
             return Ok(companies);
         }
 
